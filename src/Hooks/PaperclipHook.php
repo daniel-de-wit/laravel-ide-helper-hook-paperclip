@@ -10,7 +10,7 @@ use Czim\Paperclip\Contracts\AttachableInterface;
 use Czim\Paperclip\Contracts\AttachmentInterface;
 use Illuminate\Database\Eloquent\Model;
 
-class PaperClipHook implements ModelHookInterface
+class PaperclipHook implements ModelHookInterface
 {
     public function run(ModelsCommand $command, Model $model): void
     {
