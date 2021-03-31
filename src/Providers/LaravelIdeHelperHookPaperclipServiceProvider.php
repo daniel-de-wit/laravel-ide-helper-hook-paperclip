@@ -9,6 +9,10 @@ class LaravelIdeHelperHookPaperclipServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
+        if ($this->app->isProduction()) {
+            return;
+        }
+
         config([
             'ide-helper.model_hooks' => array_merge([
                 PaperclipHook::class,
