@@ -23,9 +23,9 @@ class PaperclipHook implements ModelHookInterface
                 $index,
                 '\\' . AttachmentInterface::class,
                 true,
-                null,
-                '',
                 true,
+                '',
+                false,
             );
         }
     }
