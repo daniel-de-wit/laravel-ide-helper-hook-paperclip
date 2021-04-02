@@ -22,7 +22,7 @@ Run standard model generation commands as normal:
 When disabled, register the LaravelIdeHelperHookPaperclipServiceProvider manually by adding it to your config/app.php
 ```php
 /*
- * Package Service Providers...* Package Service Providers...
+ * Package Service Providers...
  */
  DanielDeWit\LaravelIdeHelperHookPaperclip\Providers\LaravelIdeHelperHookPaperclipServiceProvider::class,
 ```
