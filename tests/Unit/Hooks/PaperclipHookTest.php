@@ -1,6 +1,6 @@
 <?php
 
-namespace DanielDeWit\LaravelIdeHelperHookPaperclip\Tests\Unit;
+namespace DanielDeWit\LaravelIdeHelperHookPaperclip\Tests\Unit\Hooks;
 
 use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
 use Czim\Paperclip\Contracts\AttachmentInterface;
