@@ -6,9 +6,12 @@ namespace DanielDeWit\LaravelIdeHelperHookPaperclip\Hooks;
 
 use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
 use Barryvdh\LaravelIdeHelper\Contracts\ModelHookInterface;
+use Czim\FileHandling\Contracts\Support\RawContentInterface;
+use Czim\FileHandling\Storage\File\SplFileInfoStorableFile;
 use Czim\Paperclip\Contracts\AttachableInterface;
 use Czim\Paperclip\Contracts\AttachmentInterface;
 use Illuminate\Database\Eloquent\Model;
+use SplFileInfo;
 
 class PaperclipHook implements ModelHookInterface
 {
@@ -19,14 +22,18 @@ class PaperclipHook implements ModelHookInterface
         }
 
         foreach($model->getAttachedFiles() as $index => $attachment) {
-            $command->setProperty(
-                $index,
-                '\\' . AttachmentInterface::class,
-                true,
-                true,
-                '',
-                false,
-            );
+            $command->setProperty($index, $this->getTypes(), true, true, '', false);
         }
+    }
+
+    protected function getTypes(): string
+    {
+        return implode('|', [
+            '\\' . AttachmentInterface::class,
+            '\\' . SplFileInfo::class,
+            '\\' . SplFileInfoStorableFile::class,
+            '\\' . RawContentInterface::class,
+            'string',
+        ]);
     }
 }
