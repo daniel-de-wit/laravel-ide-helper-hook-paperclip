@@ -23,6 +23,12 @@ Run standard model generation commands as normal:
 
 `php artisan ide-helper:models "App\Models\Post"`
 
+Docblocks will be added to the model
+
+```php
+* @property \Czim\Paperclip\Contracts\AttachmentInterface|\SplFileInfo|\Czim\FileHandling\Storage\File\SplFileInfoStorableFile|\Czim\FileHandling\Contracts\Support\RawContentInterface|string $image
+```
+
 ## Manual Installation
 When disabled, register the LaravelIdeHelperHookPaperclipServiceProvider manually by adding it to your config/app.php
 ```php
