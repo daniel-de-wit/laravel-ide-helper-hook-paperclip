@@ -27,6 +27,12 @@ When disabled, register the LaravelIdeHelperHookPaperclipServiceProvider manuall
  DanielDeWit\LaravelIdeHelperHookPaperclip\Providers\LaravelIdeHelperHookPaperclipServiceProvider::class,
 ```
 
+## Testing
+
+```bash
+composer test
+```
+
 ## Credits
 
 - [All Contributors](../../contributors)
