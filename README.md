@@ -30,3 +30,7 @@ When disabled, register the LaravelIdeHelperHookPaperclipServiceProvider manuall
 ## Credits
 
 - [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
