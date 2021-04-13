@@ -8,7 +8,11 @@ use Orchestra\Testbench\TestCase;
 
 class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
 {
-    protected function getPackageProviders($app)
+    /**
+     * @param \Illuminate\Foundation\Application $app
+     * @return string[]
+     */
+    protected function getPackageProviders($app): array
     {
         return [
             LaravelIdeHelperHookPaperclipServiceProvider::class,
