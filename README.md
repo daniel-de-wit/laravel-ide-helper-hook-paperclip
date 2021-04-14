@@ -2,6 +2,7 @@
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/daniel-de-wit/laravel-ide-helper-hook-paperclip/run-tests?label=tests)](https://github.com/daniel-de-wit/laravel-ide-helper-hook-paperclip/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![Coverage Status](https://coveralls.io/repos/github/daniel-de-wit/laravel-ide-helper-hook-paperclip/badge.svg?branch=main)](https://coveralls.io/github/daniel-de-wit/laravel-ide-helper-hook-paperclip?branch=main)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/daniel-de-wit/laravel-ide-helper-hook-paperclip.svg?style=flat-square)](https://packagist.org/packages/daniel-de-wit/laravel-ide-helper-hook-paperclip)
 [![Total Downloads](https://img.shields.io/packagist/dt/daniel-de-wit/laravel-ide-helper-hook-paperclip.svg?style=flat-square)](https://packagist.org/packages/daniel-de-wit/laravel-ide-helper-hook-paperclip)
 
