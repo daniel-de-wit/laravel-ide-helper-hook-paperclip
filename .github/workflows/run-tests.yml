@@ -29,7 +29,7 @@ jobs:
               with:
                   php-version: ${{ matrix.php }}
                   extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
-                  coverage: none
+                  coverage: pcov
 
             - name: Setup Problem Matches
               run: |
@@ -39,7 +39,15 @@ jobs:
             - name: Install dependencies
               run: composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
-            - run: vendor/bin/phpstan
+            - name: Execute static code analysis
+              run: vendor/bin/phpstan
 
             - name: Execute tests
               run: vendor/bin/phpunit
+
+            - name: Upload coverage results to Coveralls
+              env:
+                  COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  composer global require php-coveralls/php-coveralls
+                  php-coveralls -vvv
