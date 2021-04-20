@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DanielDeWit\LaravelIdeHelperHookPaperclip\Tests\Unit\Hooks;
 
 use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;

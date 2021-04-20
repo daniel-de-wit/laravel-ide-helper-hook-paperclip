@@ -17,11 +17,11 @@ class PaperclipHook implements ModelHookInterface
 {
     public function run(ModelsCommand $command, Model $model): void
     {
-        if (!$model instanceof AttachableInterface) {
+        if (! $model instanceof AttachableInterface) {
             return;
         }
 
-        foreach($model->getAttachedFiles() as $name => $attachment) {
+        foreach ($model->getAttachedFiles() as $name => $attachment) {
             $command->setProperty(
                 (string) $name,
                 $this->getTypes(),

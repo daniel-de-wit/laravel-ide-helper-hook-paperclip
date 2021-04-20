@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace DanielDeWit\LaravelIdeHelperHookPaperclip\Tests\Integration;
 
 use DanielDeWit\LaravelIdeHelperHookPaperclip\Hooks\PaperclipHook;
