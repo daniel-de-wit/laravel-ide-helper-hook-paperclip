@@ -47,6 +47,8 @@ composer test
 
 ## Credits
 
+- [Daniel de Wit](https://github.com/daniel-de-wit)
+- [wimski](https://github.com/wimski)
 - [All Contributors](../../contributors)
 
 ## License
