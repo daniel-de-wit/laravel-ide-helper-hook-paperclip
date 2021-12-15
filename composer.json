@@ -16,9 +16,9 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.4 || ^8.0",
         "barryvdh/laravel-ide-helper": "^2.9.2",
-        "czim/laravel-paperclip": "^3|^4",
+        "czim/laravel-paperclip": "^3.0 || ^4.0",
         "illuminate/database": "^6.9 || ^7.0 || ^8.0"
     },
     "require-dev": {
