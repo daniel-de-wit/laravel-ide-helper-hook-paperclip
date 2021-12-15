@@ -1,13 +1,12 @@
 {
     "name": "daniel-de-wit/laravel-ide-helper-hook-paperclip",
-    "type": "library",
     "description": "Add Paperclip support to Laravel IDE Helper",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "laravel-ide-helper",
         "laravel-paperclip"
     ],
-    "homepage": "https://github.com/daniel-de-wit/laravel-ide-helper-hook-paperclip",
-    "license": "MIT",
     "authors": [
         {
             "name": "Daniel de Wit",
@@ -15,6 +14,7 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/daniel-de-wit/laravel-ide-helper-hook-paperclip",
     "require": {
         "php": "^7.3 || ^8.0",
         "barryvdh/laravel-ide-helper": "^2.9.2",
@@ -30,16 +30,6 @@
         "phpunit/phpunit": "^9.5",
         "thecodingmachine/phpstan-safe-rule": "^1.0"
     },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "DanielDeWit\\LaravelIdeHelperHookPaperclip\\Providers\\LaravelIdeHelperHookPaperclipServiceProvider"
-            ]
-        }
-    },
     "autoload": {
         "psr-4": {
             "DanielDeWit\\LaravelIdeHelperHookPaperclip\\": "src"
@@ -48,6 +38,16 @@
     "autoload-dev": {
         "psr-4": {
             "DanielDeWit\\LaravelIdeHelperHookPaperclip\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DanielDeWit\\LaravelIdeHelperHookPaperclip\\Providers\\LaravelIdeHelperHookPaperclipServiceProvider"
+            ]
         }
     },
     "scripts": {
