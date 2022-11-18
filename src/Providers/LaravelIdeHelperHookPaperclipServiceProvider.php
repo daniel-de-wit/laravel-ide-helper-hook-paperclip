@@ -19,6 +19,6 @@ class LaravelIdeHelperHookPaperclipServiceProvider extends ServiceProvider
 
         $config->set('ide-helper.model_hooks', array_merge([
             PaperclipHook::class,
-        ], $config->get('ide-helper.model_hooks', [])));
+        ], (array) $config->get('ide-helper.model_hooks', [])));
     }
 }
