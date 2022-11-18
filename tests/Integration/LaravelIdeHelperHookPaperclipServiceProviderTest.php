@@ -11,7 +11,7 @@ use Orchestra\Testbench\TestCase;
 class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
 {
     /**
-     * @param \Illuminate\Foundation\Application $app
+     * @param  \Illuminate\Foundation\Application  $app
      * @return string[]
      */
     protected function getPackageProviders($app): array
@@ -26,6 +26,6 @@ class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
      */
     public function it_adds_the_paperclip_hook_to_the_config(): void
     {
-        static::assertContains(PaperclipHook::class, config('ide-helper.model_hooks'));
+        static::assertContains(PaperclipHook::class, (array) config('ide-helper.model_hooks'));
     }
 }

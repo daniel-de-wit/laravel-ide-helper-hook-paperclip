@@ -36,10 +36,10 @@ class PaperclipHook implements ModelHookInterface
     protected function getTypes(): string
     {
         return implode('|', [
-            '\\' . AttachmentInterface::class,
-            '\\' . SplFileInfo::class,
-            '\\' . SplFileInfoStorableFile::class,
-            '\\' . RawContentInterface::class,
+            '\\'.AttachmentInterface::class,
+            '\\'.SplFileInfo::class,
+            '\\'.SplFileInfoStorableFile::class,
+            '\\'.RawContentInterface::class,
             'string',
         ]);
     }
