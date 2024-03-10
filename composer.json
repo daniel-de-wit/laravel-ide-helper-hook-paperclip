@@ -18,7 +18,7 @@
     "homepage": "https://github.com/daniel-de-wit/laravel-ide-helper-hook-paperclip",
     "require": {
         "php": "^8.1",
-        "barryvdh/laravel-ide-helper": "^2.9",
+        "barryvdh/laravel-ide-helper": "^2.9 || ^3.0",
         "czim/laravel-paperclip": "^5.0",
         "illuminate/database": "^9.0 || ^10.0"
     },
