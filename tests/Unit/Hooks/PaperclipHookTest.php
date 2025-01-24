@@ -31,8 +31,6 @@ class PaperclipHookTest extends TestCase
                 '\\Czim\\Paperclip\\Contracts\\AttachmentInterface|\\SplFileInfo|\\Czim\\FileHandling\\Storage\\File\\SplFileInfoStorableFile|\\Czim\\FileHandling\\Contracts\\Support\\RawContentInterface|string',
                 true,
                 true,
-                '',
-                false,
             )
             ->getMock();
 

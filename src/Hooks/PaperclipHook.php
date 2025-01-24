@@ -23,12 +23,10 @@ class PaperclipHook implements ModelHookInterface
 
         foreach ($model->getAttachedFiles() as $name => $attachment) {
             $command->setProperty(
-                (string) $name,
-                $this->getTypes(),
-                true,
-                true,
-                '',
-                false,
+                name: (string) $name,
+                type: $this->getTypes(),
+                read: true,
+                write: true,
             );
         }
     }
