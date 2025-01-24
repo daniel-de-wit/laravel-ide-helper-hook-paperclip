@@ -11,8 +11,7 @@ use Orchestra\Testbench\TestCase;
 class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
 {
     /**
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return string[]
+     * {@inheritDoc}
      */
     protected function getPackageProviders($app): array
     {
