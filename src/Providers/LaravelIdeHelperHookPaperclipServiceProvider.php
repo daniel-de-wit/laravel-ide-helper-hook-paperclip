@@ -14,13 +14,27 @@ use Illuminate\Support\ServiceProvider;
 class LaravelIdeHelperHookPaperclipServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
-     * @return list<class-string<Command>>
+     * @var string
+     */
+    const ModelsCommandAlias = 'laravel-ide-helper-hook-paperclip-command-alias';
+
+    /**
+     * @return list<class-string<Command>|string>
      */
     public function provides(): array
     {
         return [
-            ModelsCommand::class,
+            static::ModelsCommandAlias,
         ];
+    }
+
+    public function boot(): void
+    {
+        // Laravel only allows a single deferred service provider to claim
+        // responsibility for a given class, interface, or service in the
+        // provides() method. To ensure this provider is properly loaded
+        // when running the ModelsCommand we bind an alias and use that instead.
+        $this->app->alias(ModelsCommand::class, static::ModelsCommandAlias);
     }
 
     public function register(): void
