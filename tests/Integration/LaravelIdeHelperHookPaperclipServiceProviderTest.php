@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace DanielDeWit\LaravelIdeHelperHookPaperclip\Tests\Integration;
 
+use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use DanielDeWit\LaravelIdeHelperHookPaperclip\Hooks\PaperclipHook;
 use DanielDeWit\LaravelIdeHelperHookPaperclip\Providers\LaravelIdeHelperHookPaperclipServiceProvider;
+use Illuminate\Contracts\Config\Repository;
+use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase;
 
 class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
@@ -16,6 +19,7 @@ class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
     protected function getPackageProviders($app): array
     {
         return [
+            IdeHelperServiceProvider::class,
             LaravelIdeHelperHookPaperclipServiceProvider::class,
         ];
     }
@@ -23,8 +27,20 @@ class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
     /**
      * @test
      */
-    public function it_adds_the_paperclip_hook_to_the_config(): void
+    public function it_auto_registration_off_model_hook(): void
     {
-        static::assertContains(PaperclipHook::class, (array) config('ide-helper.model_hooks'));
+        /** @var Application $app */
+        $app = $this->app;
+
+        $app->loadDeferredProvider(IdeHelperServiceProvider::class);
+        $app->loadDeferredProvider(LaravelIdeHelperHookPaperclipServiceProvider::class);
+
+        /** @var Repository $config */
+        $config = $app->get('config');
+
+        $this->assertContains(
+            PaperclipHook::class,
+            (array) $config->get('ide-helper.model_hooks', []),
+        );
     }
 }
