@@ -31,7 +31,7 @@ class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
     {
         parent::setUp();
 
-        $this->app = Mockery::mock(Application::class);
+        $this->app      = Mockery::mock(Application::class);
         $this->provider = new LaravelIdeHelperHookPaperclipServiceProvider($this->app);
     }
 

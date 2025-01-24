@@ -42,7 +42,7 @@ class PaperclipHookTest extends TestCase
             ])
             ->getMock();
 
-        (new PaperclipHook())->run($command, $model);
+        (new PaperclipHook)->run($command, $model);
     }
 
     /**
@@ -55,6 +55,6 @@ class PaperclipHookTest extends TestCase
             ->shouldNotReceive('setProperty')
             ->getMock();
 
-        (new PaperclipHook())->run($command, Mockery::mock(Model::class));
+        (new PaperclipHook)->run($command, Mockery::mock(Model::class));
     }
 }
