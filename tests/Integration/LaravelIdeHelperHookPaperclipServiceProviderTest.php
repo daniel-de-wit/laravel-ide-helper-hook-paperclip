@@ -27,13 +27,33 @@ class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
     /**
      * @test
      */
-    public function it_auto_registration_off_model_hook(): void
+    public function it_auto_registers_model_hook(): void
     {
         /** @var Application $app */
         $app = $this->app;
 
         $app->loadDeferredProvider(IdeHelperServiceProvider::class);
         $app->loadDeferredProvider(LaravelIdeHelperHookPaperclipServiceProvider::class);
+
+        /** @var Repository $config */
+        $config = $app->get('config');
+
+        $this->assertContains(
+            PaperclipHook::class,
+            (array) $config->get('ide-helper.model_hooks', []),
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function it_auto_registers_model_hook_with_wrong_service_provider_order(): void
+    {
+        /** @var Application $app */
+        $app = $this->app;
+
+        $app->loadDeferredProvider(LaravelIdeHelperHookPaperclipServiceProvider::class);
+        $app->loadDeferredProvider(IdeHelperServiceProvider::class);
 
         /** @var Repository $config */
         $config = $app->get('config');

@@ -26,6 +26,7 @@ class PaperclipHookTest extends TestCase
         /** @var ModelsCommand|MockInterface $command */
         $command = Mockery::mock(ModelsCommand::class)
             ->shouldReceive('setProperty')
+            ->once()
             ->with(
                 'foobar',
                 '\\Czim\\Paperclip\\Contracts\\AttachmentInterface|\\SplFileInfo|\\Czim\\FileHandling\\Storage\\File\\SplFileInfoStorableFile|\\Czim\\FileHandling\\Contracts\\Support\\RawContentInterface|string',
@@ -37,6 +38,7 @@ class PaperclipHookTest extends TestCase
         /** @var ModelWithAttachment|MockInterface $model */
         $model = Mockery::mock(ModelWithAttachment::class)
             ->shouldReceive('getAttachedFiles')
+            ->once()
             ->andReturn([
                 'foobar' => Mockery::mock(AttachmentInterface::class),
             ])
