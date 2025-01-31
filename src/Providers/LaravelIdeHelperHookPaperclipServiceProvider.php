@@ -16,7 +16,7 @@ class LaravelIdeHelperHookPaperclipServiceProvider extends ServiceProvider imple
     /**
      * @var string
      */
-    final const ModelsCommandAlias = 'laravel-ide-helper-hook-paperclip-command-alias';
+    final const ModelsCommandAlias = 'ModelsCommand__LaravelIdeHelperHookPaperclip__alias';
 
     /**
      * @return list<class-string<Command>|string>
