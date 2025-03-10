@@ -1,4 +1,4 @@
-name: run-tests
+name: Tests
 
 on:
   push:
@@ -37,5 +37,5 @@ jobs:
 
       - name: Run tests
         run: |
-          docker compose -f docker-compose.ci.yml run \
-            --rm php${{ matrix.php }} vendor/bin/phpunit
+          docker compose -f docker-compose.ci.yml run --rm php${{ matrix.php }} \
+             composer test
