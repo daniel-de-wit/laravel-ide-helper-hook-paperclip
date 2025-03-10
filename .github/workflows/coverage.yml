@@ -29,14 +29,10 @@ jobs:
           docker compose -f docker-compose.ci.yml run --rm --quiet-pull php${{ matrix.php }} \
             composer update --no-interaction --no-progress --prefer-dist --prefer-stable
 
-      - name: Static Analysis
+      - name: Coverage
         run: |
           docker compose -f docker-compose.ci.yml run --rm php${{ matrix.php }} \
              composer coverage
 
-      - name: Upload coverage results to Coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          docker compose -f docker-compose.ci.yml run --rm  -e COVERALLS_REPO_TOKEN php${{ matrix.php }} \
-              sh -c "composer global require php-coveralls/php-coveralls && php-coveralls"
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
