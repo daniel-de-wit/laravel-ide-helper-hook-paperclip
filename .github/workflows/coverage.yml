@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  style:
+  coverage:
     runs-on: ubuntu-latest
 
     strategy:
@@ -34,14 +34,7 @@ jobs:
       - name: Static Analysis
         run: |
           docker compose -f docker-compose.ci.yml run --rm php${{ matrix.php }} \
-             composer phpstan
-
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: composer pint
-
-      - name: Execute tests with coverage
-        run: composer coverage
+             composer coverage
 
       - name: Upload coverage results to Coveralls
         env:
