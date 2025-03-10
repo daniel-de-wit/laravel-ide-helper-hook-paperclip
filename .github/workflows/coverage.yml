@@ -38,5 +38,5 @@ jobs:
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          composer global require php-coveralls/php-coveralls
-          php-coveralls
+          docker compose -f docker-compose.ci.yml run --rm  -e COVERALLS_REPO_TOKEN php${{ matrix.php }} \
+              sh -c "composer global require php-coveralls/php-coveralls && php-coveralls"
