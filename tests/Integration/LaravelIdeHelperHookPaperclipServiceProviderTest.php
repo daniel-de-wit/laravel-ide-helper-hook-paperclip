@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace DanielDeWit\LaravelIdeHelperHookPaperclip\Tests\Integration;
 
-use PHPUnit\Framework\Attributes\Test;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use DanielDeWit\LaravelIdeHelperHookPaperclip\Hooks\PaperclipHook;
 use DanielDeWit\LaravelIdeHelperHookPaperclip\Providers\LaravelIdeHelperHookPaperclipServiceProvider;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
 {

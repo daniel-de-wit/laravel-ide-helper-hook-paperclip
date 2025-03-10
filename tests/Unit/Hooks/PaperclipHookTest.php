@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace DanielDeWit\LaravelIdeHelperHookPaperclip\Tests\Unit\Hooks;
 
-use PHPUnit\Framework\Attributes\Test;
 use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
 use Czim\Paperclip\Contracts\AttachmentInterface;
 use DanielDeWit\LaravelIdeHelperHookPaperclip\Hooks\PaperclipHook;
@@ -13,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 use Mockery;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use Mockery\MockInterface;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class PaperclipHookTest extends TestCase
