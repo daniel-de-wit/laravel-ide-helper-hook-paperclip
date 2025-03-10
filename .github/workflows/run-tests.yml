@@ -32,10 +32,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          docker compose -f docker-compose.ci.yml run --rm php${{ matrix.php }} \
+          docker compose -f docker-compose.ci.yml run --rm --quiet-pull php${{ matrix.php }} \
             composer update --no-interaction --no-progress --prefer-dist --prefer-${{ matrix.release }}
 
       - name: Run tests
         run: |
           docker compose -f docker-compose.ci.yml run \
-            --rm php${{ matrix.php }}${{ env.XDEBUG }} vendor/bin/phpunit
+            --rm php${{ matrix.php }} vendor/bin/phpunit
