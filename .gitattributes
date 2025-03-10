@@ -2,8 +2,8 @@
 # https://www.kernel.org/pub/software/scm/git/docs/gitattributes.html
 
 # Ignore all test and documentation with "export-ignore".
+/.docker             export-ignore
 /.github            export-ignore
-/docker             export-ignore
 /tests              export-ignore
 /.coveralls.yml     export-ignore
 /.editorconfig      export-ignore

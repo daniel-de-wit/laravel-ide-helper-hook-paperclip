@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DanielDeWit\LaravelIdeHelperHookPaperclip\Tests\Unit\Hooks;
 
+use PHPUnit\Framework\Attributes\Test;
 use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
 use Czim\Paperclip\Contracts\AttachmentInterface;
 use DanielDeWit\LaravelIdeHelperHookPaperclip\Hooks\PaperclipHook;
@@ -18,9 +19,7 @@ class PaperclipHookTest extends TestCase
 {
     use MockeryPHPUnitIntegration;
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_writes_paperclip_properties(): void
     {
         /** @var ModelsCommand|MockInterface $command */
@@ -47,9 +46,7 @@ class PaperclipHookTest extends TestCase
         (new PaperclipHook)->run($command, $model);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_does_not_write_paperclip_properties_if_the_model_is_not_attachable(): void
     {
         /** @var ModelsCommand|MockInterface $command */

@@ -3,13 +3,16 @@ services:
     build: .docker/php/8.2
     volumes:
       - .:/var/www/html:delegated
+      - ~/.cache/composer/files:/root/.composer/cache/files
 
   php8.3:
     build: .docker/php/8.3
     volumes:
       - .:/var/www/html:delegated
+      - ~/.cache/composer/files:/root/.composer/cache/files
 
   php8.4:
     build: .docker/php/8.4
     volumes:
       - .:/var/www/html:delegated
+      - ~/.cache/composer/files:/root/.composer/cache/files

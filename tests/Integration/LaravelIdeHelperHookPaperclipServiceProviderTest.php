@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DanielDeWit\LaravelIdeHelperHookPaperclip\Tests\Integration;
 
+use PHPUnit\Framework\Attributes\Test;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use DanielDeWit\LaravelIdeHelperHookPaperclip\Hooks\PaperclipHook;
 use DanielDeWit\LaravelIdeHelperHookPaperclip\Providers\LaravelIdeHelperHookPaperclipServiceProvider;
@@ -24,9 +25,7 @@ class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_auto_registers_model_hook(): void
     {
         /** @var Application $app */
@@ -44,9 +43,7 @@ class LaravelIdeHelperHookPaperclipServiceProviderTest extends TestCase
         );
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_auto_registers_model_hook_with_wrong_service_provider_order(): void
     {
         /** @var Application $app */
