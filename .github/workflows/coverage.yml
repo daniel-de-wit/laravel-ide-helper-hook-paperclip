@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  style:
+  coverage:
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,7 +20,7 @@ jobs:
       - name: Cache Composer dependencies
         uses: actions/cache@v4
         with:
-          path: ~/cache/.composer/files
+          path: ~/.composer/cache/files
           key: php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
 
       - name: Log in to GitHub Container Registry
@@ -31,21 +31,10 @@ jobs:
           docker compose -f docker-compose.ci.yml run --rm --quiet-pull php${{ matrix.php }} \
             composer update --no-interaction --no-progress --prefer-dist --prefer-stable
 
-      - name: Static Analysis
+      - name: Coverage
         run: |
           docker compose -f docker-compose.ci.yml run --rm php${{ matrix.php }} \
-             composer phpstan
+             composer coverage
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: composer pint
-
-      - name: Execute tests with coverage
-        run: composer coverage
-
-      - name: Upload coverage results to Coveralls
-        env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          composer global require php-coveralls/php-coveralls
-          php-coveralls
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
