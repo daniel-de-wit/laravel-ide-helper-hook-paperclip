@@ -2,7 +2,7 @@
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Tests](https://github.com/daniel-de-wit/laravel-ide-helper-hook-paperclip/actions/workflows/tests.yml/badge.svg)](https://github.com/daniel-de-wit/laravel-ide-helper-hook-paperclip/actions/workflows/tests.yml)
-[![Coverage Status](https://coveralls.io/repos/github/daniel-de-wit/laravel-ide-helper-hook-paperclip/badge.svg?branch=main)](https://coveralls.io/github/daniel-de-wit/laravel-ide-helper-hook-paperclip?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/daniel-de-wit/laravel-ide-helper-hook-paperclip/badge.svg?branch=main&kill_cache=1)](https://coveralls.io/github/daniel-de-wit/laravel-ide-helper-hook-paperclip?branch=main)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/daniel-de-wit/laravel-ide-helper-hook-paperclip.svg?style=flat-square)](https://packagist.org/packages/daniel-de-wit/laravel-ide-helper-hook-paperclip)
 [![Total Downloads](https://img.shields.io/packagist/dt/daniel-de-wit/laravel-ide-helper-hook-paperclip.svg?style=flat-square)](https://packagist.org/packages/daniel-de-wit/laravel-ide-helper-hook-paperclip)
 
